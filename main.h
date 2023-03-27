@@ -16,11 +16,11 @@
 typedef struct types_args
 {
 	char type;
-	void (*f)(va_list l);
+	int (*f)(va_list l);
 } types_args_t;
 
-void print_c(va_list l);
-void print_s(va_list l);
+int print_c(va_list l);
+int print_s(va_list l);
 
 int _write(int);
 int _printf(const char *format, ...);

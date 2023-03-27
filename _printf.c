@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	va_list l;
 	char c;
-	int i = 0, z = 0, isVal = 0, charsPrinted = 0;
+	int i = 0, z = 0, charsPrinted = 0;
 	types_args_t typesL[] = {
 		{'c', print_c},
 		{'s', print_s}
@@ -30,20 +30,14 @@ int _printf(const char *format, ...)
 				charsPrinted++;
 				continue;
 			}
-
 			for (z = 0; typesL[z].type; z++)
 			{
 				if (typesL[z].type == format[i + 1])
 				{
-					typesL[z].f(l);
-					isVal = 1;
-					charsPrinted++;
+					charsPrinted += typesL[z].f(l);
 					break;
 				}
 			}
-			if (isVal == 0)
-				exit(100);
-			isVal = 0;
 			i++;
 			continue;
 		}
