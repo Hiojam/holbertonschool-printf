@@ -21,7 +21,6 @@ typedef struct types_args
 
 void print_c(va_list l);
 void print_s(va_list l);
-void print_percentage(va_list l);
 
 int _write(int);
 int _printf(const char *format, ...);

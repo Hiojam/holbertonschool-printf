@@ -13,8 +13,7 @@ int _printf(const char *format, ...)
 	int i = 0, z = 0, isVal = 0, charsPrinted = 0;
 	types_args_t typesL[] = {
 		{'c', print_c},
-		{'s', print_s},
-		{'%', print_percentage}
+		{'s', print_s}
 	};
 
 	va_start(l, format);
@@ -24,6 +23,14 @@ int _printf(const char *format, ...)
 		c = format[i];
 		if (c == '%')
 		{
+			if (format[i + 1] == '%')
+			{
+				_write('%');
+				i++;
+				charsPrinted++;
+				continue;
+			}
+
 			for (z = 0; typesL[z].type; z++)
 			{
 				if (typesL[z].type == format[i + 1])

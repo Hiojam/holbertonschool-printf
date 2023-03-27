@@ -21,12 +21,3 @@ void print_s(va_list l)
 	for (; s[i]; i++)
 		_write(s[i]);
 }
-
-/**
- * print_percentage - Prints a percentage symbol.
- * @l: the arguments list.
- */
-void print_percentage(va_list l)
-{
-	_write('%');
-}
