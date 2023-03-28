@@ -1,22 +1,17 @@
 #include "main.h"
 
 /**
- * _printf - PrintF function.
+ * _printlogic - PrintF logic.
  *
- * @format: the format.
- * Return: int
+ * @format: Given string with the format.
+ * @typesL: List with the allowed types.
+ * @l: List of arguments.
+ * Return: Amount of chars printed.
  */
-int _printf(const char *format, ...)
+int _printlogic(const char *format, types_args_t typesL[], va_list l)
 {
-	va_list l;
+	int i = 0, charsPrinted = 0, z;
 	char c;
-	int i = 0, z = 0, charsPrinted = 0;
-	types_args_t typesL[] = {
-		{'c', print_c},
-		{'s', print_s}
-	};
-
-	va_start(l, format);
 
 	for (; format[i]; i++)
 	{
@@ -44,6 +39,30 @@ int _printf(const char *format, ...)
 		_write(c);
 		charsPrinted++;
 	}
+	return (charsPrinted);
+}
+
+/**
+ * _printf - PrintF function.
+ *
+ * @format: the format.
+ * Return: int
+ */
+int _printf(const char *format, ...)
+{
+	va_list l;
+	int charsPrinted = 0;
+	types_args_t typesL[] = {
+		{'c', print_c},
+		{'s', print_s}
+	};
+
+	if (format == NULL)
+		return (-1);
+
+	va_start(l, format);
+
+	charsPrinted = _printlogic(format, typesL, l);
 
 	va_end(l);
 	return (charsPrinted);
