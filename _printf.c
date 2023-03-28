@@ -18,9 +18,7 @@ int _printlogic(const char *format, types_args_t typesL[], va_list l)
 		{
 			if (format[i + 1] == '\0')
 			{
-				_write(format[i]);
-				charsPrinted++;
-				break;
+				return (-1);
 			}
 
 			for (z = 0; typesL[z].type; z++)

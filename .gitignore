@@ -1,3 +1,4 @@
 uploadToGithub.sh
 test
 compile.sh
+main.c
