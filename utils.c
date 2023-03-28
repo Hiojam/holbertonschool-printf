@@ -7,6 +7,8 @@
  */
 void print_number(int n)
 {
+	int base = 1, digit;
+
 	if (n < 0)
 	{
 		_write('-');
@@ -19,10 +21,19 @@ void print_number(int n)
 		return;
 	}
 
-	if (n / 10)
-		print_number(n / 10);
+	while (n / base > 9)
+		base *= 10;
 
-	_write(n % 10 + '0');
+	while (base > 0)
+	{
+		digit = n / base;
+		n %= base;
+		base /= 10;
+		if (digit < 10)
+			_write(digit + '0');
+		else
+			_write(digit - 10 + 'A');
+	}
 }
 
 /**
