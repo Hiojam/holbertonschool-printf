@@ -3,24 +3,10 @@
 /**
  * _write - Write function
  *
- * @a: char to be printed.
- * Return: No. of bytes.
+ * @c: char to be printed.
+ * Return: 1 on success or -1 in case of an error.
  */
-int _write(int a)
+int _write(char c)
 {
-	char *s;
-	int i = 0;
-
-	s = malloc(2);
-
-	if (s == NULL)
-		exit(100);
-
-	s[0] = a;
-	s[1] = '\0';
-
-	for (; s[i]; i++)
-		;
-
-	return (write(1, s, i));
+	return (write(1, &c, 1));
 }

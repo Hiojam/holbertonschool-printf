@@ -18,13 +18,6 @@ int _printlogic(const char *format, types_args_t typesL[], va_list l)
 		c = format[i];
 		if (c == '%')
 		{
-			if (format[i + 1] == '%')
-			{
-				_write('%');
-				i++;
-				charsPrinted++;
-				continue;
-			}
 			for (z = 0; typesL[z].type; z++)
 			{
 				if (typesL[z].type == format[i + 1])
@@ -54,7 +47,8 @@ int _printf(const char *format, ...)
 	int charsPrinted = 0;
 	types_args_t typesL[] = {
 		{'c', print_c},
-		{'s', print_s}
+		{'s', print_s},
+		{'%', print_percentage}
 	};
 
 	if (format == NULL)
