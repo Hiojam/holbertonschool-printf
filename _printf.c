@@ -18,6 +18,9 @@ int _printlogic(const char *format, types_args_t typesL[], va_list l)
 		c = format[i];
 		if (c == '%')
 		{
+			if (format[i + 1] == '\0')
+				break;
+
 			for (z = 0; typesL[z].type; z++)
 			{
 				if (typesL[z].type == format[i + 1])
