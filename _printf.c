@@ -10,26 +10,30 @@
  */
 int _printlogic(const char *format, types_args_t typesL[], va_list l)
 {
-	int i = 0, charsPrinted = 0, z;
+	int i = 0, charsPrinted = 0, z, found = 0;
 	char c;
 
 	for (; format[i]; i++)
 	{
 		c = format[i];
-		if (c == '%')
+		if (c == '%' && format[i + 1] != '\0')
 		{
-			if (format[i + 1] == '\0')
-				break;
-
 			for (z = 0; typesL[z].type; z++)
 			{
 				if (typesL[z].type == format[i + 1])
 				{
 					charsPrinted += typesL[z].f(l);
+					found = 1;
 					break;
 				}
 			}
+			if (found == 0)
+			{
+				_write(c);
+				_write(format[i + 1]);
+			}
 			i++;
+			found = 0;
 			continue;
 		}
 		_write(c);
