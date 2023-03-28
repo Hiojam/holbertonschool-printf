@@ -11,12 +11,10 @@
 int _printlogic(const char *format, types_args_t typesL[], va_list l)
 {
 	int i = 0, charsPrinted = 0, z, found = 0;
-	char c;
 
 	for (; format[i]; i++)
 	{
-		c = format[i];
-		if (c == '%')
+		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
 				break;
@@ -32,14 +30,14 @@ int _printlogic(const char *format, types_args_t typesL[], va_list l)
 			}
 			if (found == 0)
 			{
-				_write(c);
+				_write(format[i]);
 				_write(format[i + 1]);
 			}
 			i++;
 			found = 0;
 			continue;
 		}
-		_write(c);
+		_write(format[i]);
 		charsPrinted++;
 	}
 	return (charsPrinted);
