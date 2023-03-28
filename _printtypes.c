@@ -27,8 +27,6 @@ int print_s(va_list l)
 	for (; s[i]; i++)
 		_write(s[i]);
 
-	_write('\0');
-
 	return (i);
 }
 
