@@ -19,6 +19,7 @@ int _printlogic(const char *format, types_args_t typesL[], va_list l)
 			if (format[i + 1] == '\0')
 			{
 				_write(format[i]);
+				charsPrinted++;
 				break;
 			}
 
@@ -35,6 +36,7 @@ int _printlogic(const char *format, types_args_t typesL[], va_list l)
 			{
 				_write(format[i]);
 				_write(format[i + 1]);
+				charsPrinted += 2;
 			}
 			i++;
 			found = 0;
