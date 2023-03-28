@@ -39,6 +39,20 @@ int print_percentage(va_list l)
 {
 	(void) l;
 
-  _write('%');
-  return (1);
+	_write('%');
+	return (1);
+}
+
+/**
+ * print_int - Prints an integer
+ * @l: the arguments list.
+ * Return: the amount of chars printed.
+ */
+int print_int(va_list l)
+{
+	int n = va_arg(l, int);
+
+	print_number(n);
+
+	return (n < 0 ? num_places(n) + 1 : num_places(n));
 }

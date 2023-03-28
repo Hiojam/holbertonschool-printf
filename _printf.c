@@ -51,6 +51,7 @@ int _printf(const char *format, ...)
 	types_args_t typesL[] = {
 		{'c', print_c},
 		{'s', print_s},
+		{'d', print_int},
 		{'%', print_percentage}
 	};
 
