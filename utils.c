@@ -1,18 +1,43 @@
 #include "main.h"
 #include <limits.h>
 
+void print_number(long int n)
+{
+
+	if (n < 0)
+	{
+		_write('-');
+		n = -n;
+	}
+
+	if (n == 0)
+	{
+		_write('0');
+		return;
+	}
+
+	if (n / 10)
+		print_number(n / 10);
+
+	_write(n % 10 + '0');
+}
+
 /**
  * print_int - Prints a number
  * @n: Number to print.
  */
+/*
 void print_number(int n)
 {
 	int base = 1, digit;
 
 	if (n < 0)
 	{
-		_write('-');
-		n = -n;
+		if (n != INT_MIN)
+		{
+			_write('-');
+			n = -n;
+		}
 	}
 
 	if (n == 0)
@@ -34,7 +59,7 @@ void print_number(int n)
 		else
 			_write(digit - 10 + 'A');
 	}
-}
+}*/
 
 /**
  * num_places - Determines the number of digits an int has

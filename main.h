@@ -19,7 +19,7 @@ typedef struct types_args
 	int (*f)(va_list l);
 } types_args_t;
 
-void print_number(int n);
+void print_number(long int n);
 int num_places(int n);
 
 int print_c(va_list l);
