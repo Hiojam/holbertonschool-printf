@@ -1,0 +1,35 @@
+.TH _PRINTF "27, March 2023" "1.0" "PrintF Function Task"
+
+.SH NAME
+_printf \- Format and print data.
+
+.SH SYNOPSIS
+.B _printf (\fIFORMAT\fR, \fIARGUMENT\fR, ...)
+
+.SH DESCRIPTION
+Prints a string to stdout using arguments if given in FORMAT.
+
+.B FORMAT OF THE FORMATED STRING
+
+The format string is a character string which is composed of zero or more ordinary characters (not %), which are printed to stdout, and conversion specifications, each of which results fetching zero or more subsequent arguments.
+.br
+Each conversion specifications is introduced by the character '%', and ends with a conversion specifier.
+
+.B CONVERSION SPECIFIERS
+
+.BR c
+	Prints a character.
+
+.BR s
+	Prints a string.
+
+.BR d ", " i
+	Prints an integer.
+
+.SH RETURN VALUES
+	On success return the number of printed characters.
+
+	If fails returns -1 value.
+
+.SH AUTHORS
+Written by Hiojam Rodriguez and Facundo Alvarez.
