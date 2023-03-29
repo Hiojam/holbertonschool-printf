@@ -44,7 +44,7 @@ int print_percentage(va_list l)
 }
 
 /**
- * print_int - Prints an integer
+ * print_int - Prints an integer value
  * @l: the arguments list.
  * Return: the amount of chars printed.
  */

@@ -2,7 +2,7 @@
 #include <limits.h>
 
 /**
- * print_number - Prints a number
+ * print_int - Prints a number
  * @n: Number to print.
  */
 void print_number(int n)
