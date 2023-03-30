@@ -8,9 +8,11 @@ The program takes a string as input, and then it breaks it into individual chara
 
 This project is a simulation of the printf function in C. It was made in the program of [Holberton School](https://www.holbertonschool.com/).
 
-## Flowchart
+ ## Flowchart
+<div align= "center">
+<img src="https://i.imgur.com/rMpx7Dn.png" alt="flowchart">
+</div>
 
-<img src="https://i.imgur.com/cdXgSwv.png" alt="flowchart">
 
 ## Man page
 
@@ -50,7 +52,9 @@ To compile the program you must take into account 2 factors:
 * Compile with the command:
  ``gcc *.c``
 
-* To run it use:
+
+To run it use:
+
 ``./a.out``
 
 </details>
@@ -69,6 +73,7 @@ This table explains the functionality of the parameters accepted by the function
 | %%      | char   |    Print a '%'         |
 | %d      | int    |    Prints an integer   |
 | %i      | int    |    Prints an integer   |
+| %b      | int    |    Print the number in binary|
 
 </details>
 
@@ -99,6 +104,6 @@ The size of a meerkat is: 31
 
 ## Authors
 
-* <h6>Facundo Alvarez <a href="https://github.com/Faqu22"><img align="center" alt="github" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="30"/></a>
-* <h6>Hiojam Rodríguez <a href="https://github.com/RoxxionYT"><img align="center" alt="github" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="30"/></a>
+* <h6>Facundo Alvarez <a href="https://github.com/Faqu22"><img align="center" alt="github" src="https://i.imgur.com/hGwhvpO.png" height="30"/></a>
+* <h6>Hiojam Rodríguez <a href="https://github.com/RoxxionYT"><img align="center" alt="github" src="https://i.imgur.com/hGwhvpO.png" height="30"/></a>
 <hr>
