@@ -13,7 +13,7 @@ int print_b(va_list l)
 
 	if (num < 0)
 		return (0);
-	
+
 	while (num > 0)
 	{
 		binary += (num % 2) * i;
