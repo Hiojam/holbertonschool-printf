@@ -8,10 +8,13 @@
  */
 int print_b(va_list l)
 {
-	unsigned int num = va_arg(l, unsigned int);
+	int num = va_arg(l, int);
 	int binary = 0, i = 1;
 
-	while (num != 0)
+	if (num < 0)
+		return (0);
+	
+	while (num > 0)
 	{
 		binary += (num % 2) * i;
 		num /= 2;
