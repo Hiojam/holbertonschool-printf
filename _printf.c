@@ -57,7 +57,7 @@ int _printf(const char *format, ...)
 	va_list l;
 	int charsPrinted = 0;
 	types_args_t typesL[] = {
-		{'c', print_c},
+		{'c', print_c}, {'b', print_b},
 		{'s', print_s},
 		{'d', print_int},
 		{'i', print_int},

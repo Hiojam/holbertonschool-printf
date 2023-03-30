@@ -1,6 +1,11 @@
 #include "main.h"
 #include <limits.h>
 
+/**
+ * print_number - Prints a number to stdout.
+ *
+ * @n: Number to print
+ */
 void print_number(long int n)
 {
 
@@ -21,45 +26,6 @@ void print_number(long int n)
 
 	_write(n % 10 + '0');
 }
-
-/**
- * print_int - Prints a number
- * @n: Number to print.
- */
-/*
-void print_number(int n)
-{
-	int base = 1, digit;
-
-	if (n < 0)
-	{
-		if (n != INT_MIN)
-		{
-			_write('-');
-			n = -n;
-		}
-	}
-
-	if (n == 0)
-	{
-		_write('0');
-		return;
-	}
-
-	while (n / base > 9)
-		base *= 10;
-
-	while (base > 0)
-	{
-		digit = n / base;
-		n %= base;
-		base /= 10;
-		if (digit < 10)
-			_write(digit + '0');
-		else
-			_write(digit - 10 + 'A');
-	}
-}*/
 
 /**
  * num_places - Determines the number of digits an int has
